@@ -1,0 +1,9 @@
+message="$(cat $1)"
+
+if echo "$message" | grep -Ei '.*task#.*|.*merge.*' ; then
+  echo "✔️ Successful commit! Great job! 🎉"
+  exit 0
+else
+  echo "❌ Error: The commit message must include 'task#' or 'merge'. Please adjust the commit message. 😕"
+  exit 1
+fi
