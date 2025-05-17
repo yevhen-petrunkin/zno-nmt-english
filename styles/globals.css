@@ -45,6 +45,13 @@
 }
 
 @theme {
+    --mob: var(--breakpoint-mob);
+    --lgmob: var(--breakpoint-lgmob);
+    --tab: var(--breakpoint-tab);
+    --desk: var(--breakpoint-desk);
+    --lgdesk: var(--breakpoint-lgdesk);
+    --color-background: oklch(0.98 0 106);
+    --color-foreground: oklch(0.15 0 49);
     --color-ordinary: oklch(0.29 0.06 54);
     --color-highlight: oklch(0.99 0.03 102);
     --font-roboto: 'Roboto', sans-serif;
