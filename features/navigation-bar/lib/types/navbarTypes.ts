@@ -9,4 +9,11 @@ export interface NavBarOption {
     label: string;
 }
 
+export interface NavBarSubOption {
+    subId: number;
+    subLabel: string;
+    subTitle: string;
+    subOptions: string[];
+}
+
 export type NavBarOptions = Record<NavBarOptionId, NavBarOption>;

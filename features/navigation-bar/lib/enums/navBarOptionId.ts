@@ -1,9 +1,9 @@
 export enum NavBarOptionId {
     Home = 'home',
-    Zno = 'zno-test',
-    Nmt = 'nmt-test',
+    Zno = 'zno',
+    Nmt = 'nmt',
     Tasks = 'tasks',
-    Result = 'last-result',
+    Result = 'result',
     Grammar = 'grammar',
     Vocabulary = 'vocabulary',
 }
