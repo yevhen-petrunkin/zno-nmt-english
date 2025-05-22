@@ -1,7 +1,7 @@
 import { RouteOption } from '@/lib/enums/routeOption';
 
-import { NavBarOptionId } from '../enums/navBarOptionId';
 import { NavBarOptions } from '../types/navbarTypes';
+import { NavBarOptionId } from './navBarOptionIds';
 
 const navBarOptions: NavBarOptions = {
     [NavBarOptionId.Home]: {

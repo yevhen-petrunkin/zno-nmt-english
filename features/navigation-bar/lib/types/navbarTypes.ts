@@ -1,6 +1,6 @@
 import { RouteOption } from '@/lib/enums/routeOption';
 
-import { NavBarOptionId } from '../enums/navBarOptionId';
+import { NavBarOptionId, NavBarTestOptionId } from './navBarOptionIds';
 
 export interface NavBarOption {
     id: NavBarOptionId;
@@ -10,10 +10,11 @@ export interface NavBarOption {
 }
 
 export interface NavBarSubOption {
-    subId: number;
+    subId: string;
     subLabel: string;
     subTitle: string;
     subOptions: string[];
 }
 
+export type NavBarTestOptions = Record<NavBarTestOptionId, NavBarSubOption[]>;
 export type NavBarOptions = Record<NavBarOptionId, NavBarOption>;
