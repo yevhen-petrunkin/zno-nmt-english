@@ -8,10 +8,14 @@ export const NavBarOptionWithSubMenuId = {
     Tasks: 'tasks',
 } as const;
 
-export const NavBarOptionId = {
-    Home: 'home',
-    ...NavBarOptionWithSubMenuId,
+export const NavBarStaticMenuOptionId = {
     Result: 'result',
     Grammar: 'grammar',
     Vocabulary: 'vocabulary',
+} as const;
+
+export const NavBarOptionId = {
+    Home: 'home',
+    ...NavBarOptionWithSubMenuId,
+    ...NavBarStaticMenuOptionId,
 } as const;

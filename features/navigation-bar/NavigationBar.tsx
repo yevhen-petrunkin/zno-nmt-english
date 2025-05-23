@@ -3,6 +3,7 @@ import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
 import Link from 'next/link';
 
 import NavigationMainMenu from './components/navigation-main-menu/NavigationMainMenu';
+import NavigationStaticMenu from './components/navigation-static-menu/NavigationStaticMenu';
 import { NavBarOptionId as StaticOptionId } from './lib/constants/navBarOptionIds';
 import navBarOptions from './lib/constants/navBarOptions';
 
@@ -24,31 +25,7 @@ const NavigationBar = () => {
 
                 <NavigationMainMenu />
 
-                <MenubarMenu>
-                    <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link href={navBarOptions[StaticOptionId.Result].href}>
-                            {navBarOptions[StaticOptionId.Result].label}
-                        </Link>
-                    </MenubarTrigger>
-                </MenubarMenu>
-
-                <MenubarMenu>
-                    <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link href={navBarOptions[StaticOptionId.Grammar].href}>
-                            {navBarOptions[StaticOptionId.Grammar].label}
-                        </Link>
-                    </MenubarTrigger>
-                </MenubarMenu>
-
-                <MenubarMenu>
-                    <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link
-                            href={navBarOptions[StaticOptionId.Vocabulary].href}
-                        >
-                            {navBarOptions[StaticOptionId.Vocabulary].label}
-                        </Link>
-                    </MenubarTrigger>
-                </MenubarMenu>
+                <NavigationStaticMenu />
             </Menubar>
         </nav>
     );
