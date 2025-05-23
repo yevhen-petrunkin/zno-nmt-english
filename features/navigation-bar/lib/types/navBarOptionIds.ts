@@ -6,7 +6,7 @@ import {
 
 export type NavBarTestOptionId =
     (typeof NavBarTestOptionId)[keyof typeof NavBarTestOptionId];
-export type NavBarOptionWithSubMenuId =
+export type NavBarMenuWithSubMenuOptionId =
     (typeof NavBarOptionWithSubMenuId)[keyof typeof NavBarOptionWithSubMenuId];
 export type NavBarOptionId =
     (typeof NavBarOptionId)[keyof typeof NavBarOptionId];
