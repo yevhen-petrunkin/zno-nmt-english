@@ -1,21 +1,21 @@
-export const NavBarTestOptionId = {
-    Zno: 'zno',
-    Nmt: 'nmt',
+export const NavBarTestOptionIds = {
+    zno: 'zno',
+    nmt: 'nmt',
 } as const;
 
-export const NavBarOptionWithSubMenuId = {
-    ...NavBarTestOptionId,
-    Tasks: 'tasks',
+export const NavBarMainMenuOptionIds = {
+    ...NavBarTestOptionIds,
+    tasks: 'tasks',
 } as const;
 
-export const NavBarStaticMenuOptionId = {
-    Result: 'result',
-    Grammar: 'grammar',
-    Vocabulary: 'vocabulary',
+export const NavBarStaticMenuOptionIds = {
+    result: 'result',
+    grammar: 'grammar',
+    vocabulary: 'vocabulary',
 } as const;
 
-export const NavBarOptionId = {
-    Home: 'home',
-    ...NavBarOptionWithSubMenuId,
-    ...NavBarStaticMenuOptionId,
+export const NavBarOptionIds = {
+    home: 'home',
+    ...NavBarMainMenuOptionIds,
+    ...NavBarStaticMenuOptionIds,
 } as const;

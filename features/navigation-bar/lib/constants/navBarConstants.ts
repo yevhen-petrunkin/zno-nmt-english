@@ -1,1 +1,1 @@
-export const READING_TASKS_COUNT = 5;
+export const READING_TASKS_COUNT = 5 as const;

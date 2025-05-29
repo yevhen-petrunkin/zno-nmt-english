@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import NavigationMainMenu from './components/navigation-main-menu/NavigationMainMenu';
 import NavigationStaticMenu from './components/navigation-static-menu/NavigationStaticMenu';
-import { NavBarOptionId as StaticOptionId } from './lib/constants/navBarOptionIds';
-import navBarOptions from './lib/constants/navBarOptions';
+import { NavBarOptionIds } from './lib/constants/navBarOptionIds';
+import NavBarOptionsData from './lib/constants/navBarOptionsData';
 
 const NavigationBar = () => {
     return (
@@ -17,8 +17,10 @@ const NavigationBar = () => {
 
                 <MenubarMenu>
                     <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link href={navBarOptions[StaticOptionId.Home].href}>
-                            {navBarOptions[StaticOptionId.Home].label}
+                        <Link
+                            href={NavBarOptionsData[NavBarOptionIds.home].href}
+                        >
+                            {NavBarOptionsData[NavBarOptionIds.home].label}
                         </Link>
                     </MenubarTrigger>
                 </MenubarMenu>

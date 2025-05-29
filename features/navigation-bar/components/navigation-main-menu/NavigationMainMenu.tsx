@@ -1,10 +1,10 @@
 import { MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
-import { navMenuMockupOptions } from '@/mockup-data/navmenuOptions';
+import { navMenuMockupOptions } from '@/mockup-data/navMenuOptions';
 import { useMemo } from 'react';
 
 import getMenuLabelByOptionId from '../../lib/helpers/getMenuLabelByOptionId';
 import getReadingTasksSubOptions from '../../lib/helpers/getTasksSubOptions';
-import { NavBarMenuWithSubMenuOptionId } from '../../lib/types/navBarOptionIds';
+import { NavBarMainMenuOptionId } from '../../lib/types/navBarOptionIds';
 import { NavBarSubMenuOptions } from '../../lib/types/navbarTypes';
 import NavigationSubMenu from '../navigation-sub-menu/NavigationSubMenu';
 
@@ -20,7 +20,7 @@ const NavigationMainMenu = () => {
         <>
             {Object.entries(options ?? {}).map(([optionKey, subOptions]) => {
                 const label = getMenuLabelByOptionId(
-                    optionKey as NavBarMenuWithSubMenuOptionId,
+                    optionKey as NavBarMainMenuOptionId,
                 );
                 return label ? (
                     <MenubarMenu key={optionKey}>

@@ -1,15 +1,18 @@
 import {
-    NavBarOptionId,
-    NavBarOptionWithSubMenuId,
-    NavBarStaticMenuOptionId,
-    NavBarTestOptionId,
+    NavBarMainMenuOptionIds,
+    NavBarOptionIds,
+    NavBarStaticMenuOptionIds,
+    NavBarTestOptionIds,
 } from '../constants/navBarOptionIds';
 
 export type NavBarTestOptionId =
-    (typeof NavBarTestOptionId)[keyof typeof NavBarTestOptionId];
-export type NavBarMenuWithSubMenuOptionId =
-    (typeof NavBarOptionWithSubMenuId)[keyof typeof NavBarOptionWithSubMenuId];
+    (typeof NavBarTestOptionIds)[keyof typeof NavBarTestOptionIds];
+
+export type NavBarMainMenuOptionId =
+    (typeof NavBarMainMenuOptionIds)[keyof typeof NavBarMainMenuOptionIds];
+
 export type NavBarStaticMenuOptionId =
-    (typeof NavBarStaticMenuOptionId)[keyof typeof NavBarStaticMenuOptionId];
+    (typeof NavBarStaticMenuOptionIds)[keyof typeof NavBarStaticMenuOptionIds];
+
 export type NavBarOptionId =
-    (typeof NavBarOptionId)[keyof typeof NavBarOptionId];
+    (typeof NavBarOptionIds)[keyof typeof NavBarOptionIds];
