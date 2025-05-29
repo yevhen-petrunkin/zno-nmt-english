@@ -1,9 +1,8 @@
 export const MainRoutes = {
     home: '/',
-    zno: '/zno-test',
-    nmt: '/nmt-test',
+    test: '/test',
     tasks: '/tasks',
-    result: '/last-result',
+    result: '/result',
     grammar: '/grammar',
     vocabulary: '/vocabulary',
 } as const;

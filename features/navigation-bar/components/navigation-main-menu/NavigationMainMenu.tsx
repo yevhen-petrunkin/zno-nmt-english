@@ -3,6 +3,7 @@ import { navMenuMockupOptions } from '@/mockup-data/navMenuOptions';
 import { useMemo } from 'react';
 
 import getMenuLabelByOptionId from '../../lib/helpers/getMenuLabelByOptionId';
+import getSubMenuTypeByOptionId from '../../lib/helpers/getSubMenuTypeByOptionId';
 import getReadingTasksSubOptions from '../../lib/helpers/getTasksSubOptions';
 import { NavBarMainMenuOptionId } from '../../lib/types/navBarOptionIds';
 import { NavBarSubMenuOptions } from '../../lib/types/navbarTypes';
@@ -22,12 +23,15 @@ const NavigationMainMenu = () => {
                 const label = getMenuLabelByOptionId(
                     optionKey as NavBarMainMenuOptionId,
                 );
-                return label ? (
+                const type = getSubMenuTypeByOptionId(
+                    optionKey as NavBarMainMenuOptionId,
+                );
+                return label && type ? (
                     <MenubarMenu key={optionKey}>
                         <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
                             {label}
                         </MenubarTrigger>
-                        <NavigationSubMenu options={subOptions} />
+                        <NavigationSubMenu options={subOptions} type={type} />
                     </MenubarMenu>
                 ) : null;
             })}

@@ -12,13 +12,13 @@ const NavBarOptionsData: NavBarOptions = {
     },
     [NavBarOptionIds.zno]: {
         id: NavBarOptionIds.zno,
-        href: MainRoutes.zno,
+        href: MainRoutes.test,
         title: 'ZNO',
         label: 'ЗНО',
     },
     [NavBarOptionIds.nmt]: {
         id: NavBarOptionIds.nmt,
-        href: MainRoutes.nmt,
+        href: MainRoutes.test,
         title: 'NMT',
         label: 'НМТ',
     },
