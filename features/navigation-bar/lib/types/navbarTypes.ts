@@ -1,30 +1,25 @@
 import { MainRoute } from '@/lib/types/route';
 
 import {
-    NavBarMainMenuOptionId,
-    NavBarOptionId,
-    NavBarTestOptionId,
-} from './navBarOptionIds';
+    RouteBase,
+    RouteBaseDynamic,
+    RouteBaseMain,
+} from '../../../../lib/types/routeBase';
 
 export interface NavBarOption {
-    id: NavBarOptionId;
+    id: RouteBase;
     href: MainRoute;
-    title: string;
     label: string;
 }
 
 export interface NavBarSubOption {
     subId: string;
     subLabel: string;
-    subTitle: string;
     subOptions: string[];
 }
 
-export type NavBarTestOptions = Record<NavBarTestOptionId, NavBarSubOption[]>;
+export type NavBarTestOptions = Record<RouteBaseMain, NavBarSubOption[]>;
 
-export type NavBarSubMenuOptions = Record<
-    NavBarMainMenuOptionId,
-    NavBarSubOption[]
->;
+export type NavBarSubMenuOptions = Record<RouteBaseDynamic, NavBarSubOption[]>;
 
-export type NavBarOptions = Record<NavBarOptionId, NavBarOption>;
+export type NavBarOptions = Record<RouteBase, NavBarOption>;

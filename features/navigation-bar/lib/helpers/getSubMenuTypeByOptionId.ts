@@ -1,28 +1,25 @@
-import { NavBarMainMenuOptionIds } from '../constants/navBarOptionIds';
+import { RouteBasesDynamic } from '../../../../lib/constants/routeBases';
+import { RouteBaseDynamic } from '../../../../lib/types/routeBase';
 import { SubMenuTypes } from '../constants/subMenuOptions';
-import { NavBarMainMenuOptionId } from '../types/navBarOptionIds';
 import { SubMenuType } from '../types/subMenuTypes';
+
+const submenuTypeMapObj = {
+    [RouteBasesDynamic.zno]: SubMenuTypes.test,
+    [RouteBasesDynamic.nmt]: SubMenuTypes.test,
+    [RouteBasesDynamic.tasks]: SubMenuTypes.tasks,
+};
 
 /**
  * Returns a type of the navigation bar submenu, given menu option id.
  * If the id corresponds to a menu option with a submenu, the submenu type is returned.
  * Otherwise, null is returned.
- * @param {NavBarMainMenuOptionId} optionId the id of the menu option, which has a submenu
+ * @param {RouteBaseDynamic} optionId the id of the menu option, which has a submenu
  * @returns {SubMenuType | null} the submenu type, or null if the id is invalid
  */
 const getSubMenuTypeByOptionId = (
-    optionId: NavBarMainMenuOptionId,
+    optionId: RouteBaseDynamic,
 ): SubMenuType | null => {
-    switch (optionId) {
-        case NavBarMainMenuOptionIds.zno:
-            return SubMenuTypes.test;
-        case NavBarMainMenuOptionIds.nmt:
-            return SubMenuTypes.test;
-        case NavBarMainMenuOptionIds.tasks:
-            return SubMenuTypes.tasks;
-        default:
-            return null;
-    }
+    return submenuTypeMapObj[optionId] ?? null;
 };
 
 export default getSubMenuTypeByOptionId;

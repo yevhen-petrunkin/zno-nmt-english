@@ -1,49 +1,42 @@
 import { MainRoutes } from '@/lib/constants/routes';
 
+import { RouteBases } from '../../../../lib/constants/routeBases';
 import { NavBarOptions } from '../types/navbarTypes';
-import { NavBarOptionIds } from './navBarOptionIds';
 
 const NavBarOptionsData: NavBarOptions = {
-    [NavBarOptionIds.home]: {
-        id: NavBarOptionIds.home,
+    [RouteBases.home]: {
+        id: RouteBases.home,
         href: MainRoutes.home,
-        title: 'Home',
         label: 'Головна',
     },
-    [NavBarOptionIds.zno]: {
-        id: NavBarOptionIds.zno,
+    [RouteBases.zno]: {
+        id: RouteBases.zno,
         href: MainRoutes.test,
-        title: 'ZNO',
         label: 'ЗНО',
     },
-    [NavBarOptionIds.nmt]: {
-        id: NavBarOptionIds.nmt,
+    [RouteBases.nmt]: {
+        id: RouteBases.nmt,
         href: MainRoutes.test,
-        title: 'NMT',
         label: 'НМТ',
     },
-    [NavBarOptionIds.tasks]: {
-        id: NavBarOptionIds.tasks,
+    [RouteBases.tasks]: {
+        id: RouteBases.tasks,
         href: MainRoutes.tasks,
-        title: 'Tasks',
         label: 'Завдання',
     },
-    [NavBarOptionIds.result]: {
-        id: NavBarOptionIds.result,
+    [RouteBases.result]: {
+        id: RouteBases.result,
         href: MainRoutes.result,
-        title: 'Result',
         label: 'Результат',
     },
-    [NavBarOptionIds.grammar]: {
-        id: NavBarOptionIds.grammar,
+    [RouteBases.grammar]: {
+        id: RouteBases.grammar,
         href: MainRoutes.grammar,
-        title: 'Grammar',
         label: 'Граматика',
     },
-    [NavBarOptionIds.vocabulary]: {
-        id: NavBarOptionIds.vocabulary,
+    [RouteBases.vocabulary]: {
+        id: RouteBases.vocabulary,
         href: MainRoutes.vocabulary,
-        title: 'Vocabulary',
         label: 'Словник',
     },
 } as const;

@@ -2,9 +2,9 @@ import InteractiveLogo from '@/components/lib-components/interactive-logo/Intera
 import { Menubar, MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
 import Link from 'next/link';
 
+import { RouteBases } from '../../lib/constants/routeBases';
 import NavigationMainMenu from './components/navigation-main-menu/NavigationMainMenu';
 import NavigationStaticMenu from './components/navigation-static-menu/NavigationStaticMenu';
-import { NavBarOptionIds } from './lib/constants/navBarOptionIds';
 import NavBarOptionsData from './lib/constants/navBarOptionsData';
 
 const NavigationBar = () => {
@@ -17,10 +17,8 @@ const NavigationBar = () => {
 
                 <MenubarMenu>
                     <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link
-                            href={NavBarOptionsData[NavBarOptionIds.home].href}
-                        >
-                            {NavBarOptionsData[NavBarOptionIds.home].label}
+                        <Link href={NavBarOptionsData[RouteBases.home].href}>
+                            {NavBarOptionsData[RouteBases.home].label}
                         </Link>
                     </MenubarTrigger>
                 </MenubarMenu>

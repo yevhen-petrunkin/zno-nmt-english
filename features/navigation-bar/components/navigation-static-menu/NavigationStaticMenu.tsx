@@ -1,13 +1,13 @@
 import { MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
 import Link from 'next/link';
 
-import { NavBarStaticMenuOptionIds } from '../../lib/constants/navBarOptionIds';
+import { RouteBasesStatic } from '../../../../lib/constants/routeBases';
 import NavBarOptionsData from '../../lib/constants/navBarOptionsData';
 
 const NavigationStaticMenu = () => {
     return (
         <>
-            {Object.values(NavBarStaticMenuOptionIds).map(staticOptionId => {
+            {Object.values(RouteBasesStatic).map(staticOptionId => {
                 return (
                     <MenubarMenu key={staticOptionId}>
                         <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">

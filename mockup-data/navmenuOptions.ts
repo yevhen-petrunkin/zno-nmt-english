@@ -5,68 +5,57 @@ export const navMenuMockupOptions: NavBarTestOptions = {
         {
             subId: 'zno_2011',
             subLabel: '2011',
-            subTitle: '2011',
             subOptions: ['demo', 'main'],
         },
         {
             subId: 'zno_2012',
             subLabel: '2012',
-            subTitle: '2012',
             subOptions: ['demo', 'main'],
         },
         {
             subId: 'zno_2013',
             subLabel: '2013',
-            subTitle: '2013',
             subOptions: ['demo', 'main'],
         },
         {
             subId: 'zno_2014',
             subLabel: '2014',
-            subTitle: '2014',
             subOptions: ['demo', 'main'],
         },
 
         {
             subId: 'zno_2015',
             subLabel: '2015',
-            subTitle: '2015',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'zno_2016',
             subLabel: '2016',
-            subTitle: '2016',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'zno_2017',
             subLabel: '2017',
-            subTitle: '2017',
             subOptions: ['extra'],
         },
         {
             subId: 'zno_2018',
             subLabel: '2018',
-            subTitle: '2018',
             subOptions: ['main', 'extra'],
         },
         {
             subId: 'zno_2019',
             subLabel: '2019',
-            subTitle: '2019',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'zno_2020',
             subLabel: '2020',
-            subTitle: '2020',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'zno_2021',
             subLabel: '2021',
-            subTitle: '2021',
             subOptions: ['demo', 'main', 'extra'],
         },
     ],
@@ -74,19 +63,16 @@ export const navMenuMockupOptions: NavBarTestOptions = {
         {
             subId: 'nmt_2023',
             subLabel: '2023',
-            subTitle: '2023',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'nmt_2024',
             subLabel: '2024',
-            subTitle: '2024',
             subOptions: ['demo', 'main', 'extra'],
         },
         {
             subId: 'nmt_2025',
             subLabel: '2025',
-            subTitle: '2025',
             subOptions: ['demo', 'main', 'extra'],
         },
     ],

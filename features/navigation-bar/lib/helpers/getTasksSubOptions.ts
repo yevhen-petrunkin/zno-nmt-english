@@ -18,7 +18,6 @@ const getReadingTasksSubOptions = (
         subOptions.push({
             subId: `task_${i + 3}`,
             subLabel: `Завдання ${i + 3}/${i}`,
-            subTitle: `Task ${i + 3}/${i}`,
             subOptions: subtIds,
         });
     }

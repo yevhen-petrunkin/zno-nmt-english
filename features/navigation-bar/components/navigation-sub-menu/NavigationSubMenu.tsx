@@ -6,8 +6,14 @@ import {
     MenubarSubContent,
     MenubarSubTrigger,
 } from '@/components/ui/menubar';
+import { TestSessions } from '@/lib/constants/testSessions';
+import { TestSessionId } from '@/lib/types/testSession';
 
-import { SubMenuOptions } from '../../lib/constants/subMenuOptions';
+import {
+    SubMenuOptions,
+    SubMenuTypes,
+} from '../../lib/constants/subMenuOptions';
+import getTasksSubMenuLabelByOptionId from '../../lib/helpers/getTasksSubMenuLabelByOptionId';
 import { NavBarSubOption } from '../../lib/types/navbarTypes';
 import { SubMenuType } from '../../lib/types/subMenuTypes';
 
@@ -19,25 +25,38 @@ const NavigationSubMenu = ({
     type: SubMenuType;
 }) => {
     return (
-        <MenubarContent>
+        <MenubarContent className="max-w-50 min-w-24">
             <MenubarItem disabled>{SubMenuOptions[type].category}</MenubarItem>
             <MenubarSeparator />
             {options.map(option => {
                 return (
                     <MenubarSub key={option.subId}>
                         <MenubarSubTrigger>{option.subLabel}</MenubarSubTrigger>
-                        <MenubarSubContent>
+                        <MenubarSubContent className="max-w-54 min-w-24">
                             <MenubarItem disabled>
                                 {SubMenuOptions[type].subCategory}
                             </MenubarItem>
                             <MenubarSeparator />
-                            {option?.subOptions?.length > 0
-                                ? option?.subOptions.map(subOption => (
-                                      <MenubarItem key={subOption}>
-                                          {subOption}
-                                      </MenubarItem>
-                                  ))
-                                : null}
+                            <div
+                                className="overflow-y-hidden data-[type=true]:h-54"
+                                data-type={type === SubMenuTypes.tasks}
+                            >
+                                <div className="h-full overflow-y-auto">
+                                    {option?.subOptions?.length > 0
+                                        ? option?.subOptions.map(subOption => (
+                                              <MenubarItem key={subOption}>
+                                                  {type === SubMenuTypes.test
+                                                      ? TestSessions[
+                                                            subOption as TestSessionId
+                                                        ].label
+                                                      : getTasksSubMenuLabelByOptionId(
+                                                            subOption,
+                                                        )}
+                                              </MenubarItem>
+                                          ))
+                                        : null}
+                                </div>
+                            </div>
                         </MenubarSubContent>
                     </MenubarSub>
                 );

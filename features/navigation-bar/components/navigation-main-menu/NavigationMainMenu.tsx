@@ -2,10 +2,10 @@ import { MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
 import { navMenuMockupOptions } from '@/mockup-data/navMenuOptions';
 import { useMemo } from 'react';
 
+import { RouteBaseDynamic } from '../../../../lib/types/routeBase';
 import getMenuLabelByOptionId from '../../lib/helpers/getMenuLabelByOptionId';
 import getSubMenuTypeByOptionId from '../../lib/helpers/getSubMenuTypeByOptionId';
 import getReadingTasksSubOptions from '../../lib/helpers/getTasksSubOptions';
-import { NavBarMainMenuOptionId } from '../../lib/types/navBarOptionIds';
 import { NavBarSubMenuOptions } from '../../lib/types/navbarTypes';
 import NavigationSubMenu from '../navigation-sub-menu/NavigationSubMenu';
 
@@ -21,10 +21,10 @@ const NavigationMainMenu = () => {
         <>
             {Object.entries(options ?? {}).map(([optionKey, subOptions]) => {
                 const label = getMenuLabelByOptionId(
-                    optionKey as NavBarMainMenuOptionId,
+                    optionKey as RouteBaseDynamic,
                 );
                 const type = getSubMenuTypeByOptionId(
-                    optionKey as NavBarMainMenuOptionId,
+                    optionKey as RouteBaseDynamic,
                 );
                 return label && type ? (
                     <MenubarMenu key={optionKey}>
