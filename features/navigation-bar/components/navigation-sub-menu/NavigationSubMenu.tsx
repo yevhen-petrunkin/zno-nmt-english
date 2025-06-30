@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/menubar';
 import { TestSessions } from '@/lib/constants/testSessions';
 import { TestSessionId } from '@/lib/types/testSession';
+import Link from 'next/link';
 
 import {
     SubMenuOptions,
@@ -24,6 +25,9 @@ const NavigationSubMenu = ({
     options: NavBarSubOption[];
     type: SubMenuType;
 }) => {
+    const pathnameBase =
+        type === SubMenuTypes.test ? SubMenuTypes.test : SubMenuTypes.tasks;
+
     return (
         <MenubarContent className="max-w-50 min-w-24">
             <MenubarItem disabled>{SubMenuOptions[type].category}</MenubarItem>
@@ -45,13 +49,18 @@ const NavigationSubMenu = ({
                                     {option?.subOptions?.length > 0
                                         ? option?.subOptions.map(subOption => (
                                               <MenubarItem key={subOption}>
-                                                  {type === SubMenuTypes.test
-                                                      ? TestSessions[
-                                                            subOption as TestSessionId
-                                                        ].label
-                                                      : getTasksSubMenuLabelByOptionId(
-                                                            subOption,
-                                                        )}
+                                                  <Link
+                                                      href={`/${pathnameBase}/${option.subId}/${subOption}`}
+                                                  >
+                                                      {type ===
+                                                      SubMenuTypes.test
+                                                          ? TestSessions[
+                                                                subOption as TestSessionId
+                                                            ].label
+                                                          : getTasksSubMenuLabelByOptionId(
+                                                                subOption,
+                                                            )}
+                                                  </Link>
                                               </MenubarItem>
                                           ))
                                         : null}
