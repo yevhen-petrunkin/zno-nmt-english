@@ -1,6 +1,6 @@
-import { TEST_TYPE_REGEX } from '../patterns/test';
-import { RouteBaseMain } from '../types/routeBase';
-import { TestIdData } from '../types/test';
+import { TEST_TYPE_REGEX } from '../../patterns/test';
+import { RouteBaseMain } from '../../types/routeBase';
+import { TestIdData } from '../../types/test';
 
 /**
  * Parses a test ID string and extracts the test type and year.

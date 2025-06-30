@@ -1,11 +1,9 @@
 import { MenubarItem } from '@/components/ui/menubar';
-import { TestSessions } from '@/lib/constants/testSessions';
-import { TestSessionId } from '@/lib/types/testSession';
 import Link from 'next/link';
 import React from 'react';
 
 import { SubMenuTypes } from '../../lib/constants/subMenuOptions';
-import getTasksSubMenuLabelByOptionId from '../../lib/helpers/getTasksSubMenuLabelByOptionId';
+import getSubMenuLabelByOptionId from '../../lib/helpers/getSubMenuLabelByOptionId';
 import { NavBarSubOption } from '../../lib/types/navbarTypes';
 import { SubMenuType } from '../../lib/types/subMenuTypes';
 
@@ -31,12 +29,7 @@ const NavigationSubMenuContent = ({
                               <Link
                                   href={`/${pathnameBase}/${option.subId}/${subOption}`}
                               >
-                                  {type === SubMenuTypes.test
-                                      ? TestSessions[subOption as TestSessionId]
-                                            .label
-                                      : getTasksSubMenuLabelByOptionId(
-                                            subOption,
-                                        )}
+                                  {getSubMenuLabelByOptionId(subOption, type)}
                               </Link>
                           </MenubarItem>
                       ))

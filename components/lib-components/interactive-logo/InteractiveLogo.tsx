@@ -7,7 +7,7 @@ import { InteractiveLogoProps } from './interactiveLogo.types';
 
 const InteractiveLogo = ({ href = '/', className }: InteractiveLogoProps) => {
     return (
-        <div className={cn('overflow-hidden rounded-sm', className)}>
+        <div className={cn('overflow-hidden', className)}>
             <AspectRatio ratio={1 / 1} className="relative">
                 <Link href={href} aria-label="Clickable Logo">
                     <Image

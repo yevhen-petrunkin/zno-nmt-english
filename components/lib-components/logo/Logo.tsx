@@ -6,7 +6,7 @@ import { LogoProps } from './logo.types';
 
 const Logo = ({ className }: LogoProps) => {
     return (
-        <div className={cn('overflow-hidden rounded-sm', className)}>
+        <div className={cn('overflow-hidden', className)}>
             <AspectRatio ratio={1 / 1} className="relative">
                 <Image
                     src="/logo/logo.jpg"

@@ -1,3 +1,5 @@
+import Container from '@/components/lib-components/container/Container';
+import NavigationBar from '@/features/navigation-bar/NavigationBar';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
@@ -27,6 +29,11 @@ export default function RootLayout({
                     roboto.variable,
                 )}
             >
+                <header>
+                    <Container padding>
+                        <NavigationBar />
+                    </Container>
+                </header>
                 {children}
             </body>
         </html>
