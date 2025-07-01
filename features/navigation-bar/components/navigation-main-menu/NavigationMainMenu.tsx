@@ -1,5 +1,5 @@
 import { MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
-import { navMenuMockupOptions } from '@/mockup-data/navMenuOptions';
+import { navMenuMockupOptions } from '@/mockup-data/navmenuOptions';
 import { useMemo } from 'react';
 
 import { RouteBaseDynamic } from '../../../../lib/types/routeBase';
@@ -28,7 +28,7 @@ const NavigationMainMenu = () => {
                 );
                 return label && type ? (
                     <MenubarMenu key={optionKey}>
-                        <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
+                        <MenubarTrigger className="desk:text-lg lgdesk:text-2xl text-sm">
                             {label}
                         </MenubarTrigger>
                         <NavigationSubMenu options={subOptions} type={type} />
