@@ -34,7 +34,9 @@ export default function RootLayout({
                         <NavigationBar />
                     </Container>
                 </header>
-                {children}
+                <main>
+                    <Container padding>{children}</Container>
+                </main>
             </body>
         </html>
     );
