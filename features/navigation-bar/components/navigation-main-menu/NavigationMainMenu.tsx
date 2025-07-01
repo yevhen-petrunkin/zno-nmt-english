@@ -1,5 +1,5 @@
 import { MenubarMenu, MenubarTrigger } from '@/components/ui/menubar';
-import { navMenuMockupOptions } from '@/mockup-data/navMenuOptions';
+import { navMenuMockupOptions } from '@/mockup-data/navmenuOptions';
 import { useMemo } from 'react';
 
 import { RouteBaseDynamic } from '../../../../lib/types/routeBase';
