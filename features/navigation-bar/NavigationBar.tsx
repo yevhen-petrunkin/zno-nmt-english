@@ -11,23 +11,36 @@ import NavBarOptionsData from './lib/constants/navBarOptionsData';
 const NavigationBar = () => {
     return (
         <nav className="mt-4">
-            <Menubar className="desk:h-18 lgdesk:h-22 lgdesk:gap-20 desk:gap-12 tab:flex hidden h-10 justify-center gap-6">
-                <MenubarMenu>
-                    <InteractiveLogo className="desk:size-16 lgdesk:size-20 size-8" />
-                </MenubarMenu>
-                <MenubarMenu>
-                    <MenubarTrigger className="desk:text-lg lgdesk:text-2xl">
-                        <Link href={NavBarOptionsData[RouteBases.home].href}>
-                            {NavBarOptionsData[RouteBases.home].label}
-                        </Link>
-                    </MenubarTrigger>
-                </MenubarMenu>
-                <NavigationMainMenu />
-                <NavigationStaticMenu />
-            </Menubar>
+            <Menubar className="desk:h-18 lgdesk:h-22 lgdesk:gap-20 desk:gap-12 tab:justify-center tab:gap-6 flex h-10 justify-evenly">
+                <div className="tab:hidden">
+                    <MenubarMenu>
+                        <BurgerMenu />
+                    </MenubarMenu>
+                </div>
 
-            <Menubar className="desk:h-18 lgdesk:h-22 tab:hidden h-10">
-                <BurgerMenu />
+                <div className="tab:block hidden">
+                    <MenubarMenu>
+                        <InteractiveLogo className="desk:size-16 lgdesk:size-20 size-8" />
+                    </MenubarMenu>
+                </div>
+
+                <div className="tab:block hidden">
+                    <MenubarMenu>
+                        <MenubarTrigger className="desk:text-lg lgdesk:text-2xl tab:text-sm tab:block hidden">
+                            <Link
+                                href={NavBarOptionsData[RouteBases.home].href}
+                            >
+                                {NavBarOptionsData[RouteBases.home].label}
+                            </Link>
+                        </MenubarTrigger>
+                    </MenubarMenu>
+                </div>
+
+                <NavigationMainMenu />
+
+                <div className="tab:flex hidden h-10 justify-center gap-6">
+                    <NavigationStaticMenu />
+                </div>
             </Menubar>
         </nav>
     );

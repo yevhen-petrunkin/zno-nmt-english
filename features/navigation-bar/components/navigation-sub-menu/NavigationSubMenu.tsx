@@ -20,7 +20,7 @@ const NavigationSubMenu = ({
     type: SubMenuType;
 }) => {
     return (
-        <MenubarContent className="max-w-50 min-w-24">
+        <MenubarContent className="z-50 max-w-50 min-w-24">
             <MenubarItem disabled>{SubMenuOptions[type].category}</MenubarItem>
             <MenubarSeparator />
             {options.map(option => {
