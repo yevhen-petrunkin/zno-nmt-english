@@ -38,7 +38,7 @@ const NavigationBar = () => {
 
                 <NavigationMainMenu />
 
-                <div className="tab:flex hidden h-10 justify-center gap-6">
+                <div className="tab:flex lgdesk:gap-20 desk:gap-12 hidden h-10 justify-center gap-6">
                     <NavigationStaticMenu />
                 </div>
             </Menubar>
