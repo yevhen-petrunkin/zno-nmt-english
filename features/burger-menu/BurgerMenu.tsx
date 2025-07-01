@@ -28,7 +28,7 @@ const BurgerMenu = () => {
                 </Button>
             </SheetTrigger>
 
-            <SheetContent side="left">
+            <SheetContent side="left" className="bg-background/90">
                 <SheetHeader>
                     <SheetTitle className="invisible size-0">
                         Меню навігації
@@ -43,7 +43,7 @@ const BurgerMenu = () => {
 
                 <nav className="flex flex-col items-center gap-2 px-4">
                     <MenubarMenu>
-                        <MenubarTrigger className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-lg font-medium outline-hidden select-none">
+                        <MenubarTrigger className="hover:bg-accent/40 hover:text-accent-foreground focus:bg-accent/40 focus:text-accent-foreground data-[state=open]:bg-accent/40 data-[state=open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-lg font-medium outline-hidden select-none">
                             <Link
                                 href={NavBarOptionsData[RouteBases.home].href}
                             >

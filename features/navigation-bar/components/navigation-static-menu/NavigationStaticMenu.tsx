@@ -10,7 +10,7 @@ const NavigationStaticMenu = () => {
             {Object.values(RouteBasesStatic).map(staticOptionId => {
                 return (
                     <MenubarMenu key={staticOptionId}>
-                        <MenubarTrigger className="desk:text-lg lgdesk:text-2xl tab:text-sm text-lg">
+                        <MenubarTrigger className="hover:bg-accent/40 data-[state=open]:bg-accent/40 focus:bg-accent/40 desk:text-lg lgdesk:text-2xl tab:text-sm text-lg">
                             <Link href={NavBarOptionsData[staticOptionId].href}>
                                 {NavBarOptionsData[staticOptionId].label}
                             </Link>

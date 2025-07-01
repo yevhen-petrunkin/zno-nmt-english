@@ -28,7 +28,7 @@ const NavigationMainMenu = () => {
                 );
                 return label && type ? (
                     <MenubarMenu key={optionKey}>
-                        <MenubarTrigger className="desk:text-lg lgdesk:text-2xl text-sm">
+                        <MenubarTrigger className="hover:bg-accent/40 focus:bg-accent/40 data-[state=open]:bg-accent/40 desk:text-lg lgdesk:text-2xl text-sm">
                             {label}
                         </MenubarTrigger>
                         <NavigationSubMenu options={subOptions} type={type} />
