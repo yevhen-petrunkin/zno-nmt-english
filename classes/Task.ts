@@ -1,7 +1,8 @@
+import { TestSessionLabels } from '@/lib/constants/testSessions';
 import { TestTypeLabels } from '@/lib/constants/tests';
 import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
 import { TestTypeData } from '@/lib/types/test';
-import { TestSessionId } from '@/lib/types/testSession';
+import { TestSession, TestSessionId } from '@/lib/types/testSession';
 
 import { TaskConfig } from './task.types';
 
@@ -35,8 +36,11 @@ class Task {
         return this._testId;
     };
 
-    getTestSession = (): TestSessionId => {
-        return this._testSession;
+    getTestSession = (): TestSession => {
+        return {
+            id: this._testSession,
+            label: TestSessionLabels[this._testSession],
+        };
     };
 
     /**
