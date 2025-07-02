@@ -34,7 +34,11 @@ export default function RootLayout({
                         <NavigationBar />
                     </Container>
                 </header>
-                {children}
+                <main>
+                    <Container padding className="pb-4">
+                        {children}
+                    </Container>
+                </main>
             </body>
         </html>
     );
