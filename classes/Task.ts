@@ -1,5 +1,6 @@
 import { TestSessionLabels } from '@/lib/constants/testSessions';
 import { TestTypeLabels } from '@/lib/constants/tests';
+import getTestTypeLabelByTestId from '@/lib/helpers/test/getTestTypeLabelByTestId';
 import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
 import { TestTypeData } from '@/lib/types/test';
 import { TestSession, TestSessionId } from '@/lib/types/testSession';
@@ -65,6 +66,14 @@ class Task {
             testType: testData.testType,
             testTypeLabel: TestTypeLabels[testData.testType],
         };
+    };
+
+    /**
+     * Returns the test label (e.g. 'ЗНО 2011', 'НМТ 2023'),
+     * or null if the test ID is invalid.
+     */
+    public getTestLabel = (): string | null => {
+        return getTestTypeLabelByTestId(this._testId);
     };
 
     /**

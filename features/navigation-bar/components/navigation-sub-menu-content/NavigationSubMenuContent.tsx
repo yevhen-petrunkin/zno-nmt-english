@@ -2,6 +2,7 @@ import { MenubarItem } from '@/components/ui/menubar';
 import Link from 'next/link';
 import React from 'react';
 
+import { INVALID_OPTION_LABEL } from '../../lib/constants/navBarConstants';
 import { SubMenuTypes } from '../../lib/constants/subMenuOptions';
 import getSubMenuLabelByOptionId from '../../lib/helpers/getSubMenuLabelByOptionId';
 import { NavBarSubOption } from '../../lib/types/navbarTypes';
@@ -29,7 +30,8 @@ const NavigationSubMenuContent = ({
                               <Link
                                   href={`/${pathnameBase}/${option.subId}/${subOption}`}
                               >
-                                  {getSubMenuLabelByOptionId(subOption, type)}
+                                  {getSubMenuLabelByOptionId(subOption, type) ??
+                                      INVALID_OPTION_LABEL}
                               </Link>
                           </MenubarItem>
                       ))
