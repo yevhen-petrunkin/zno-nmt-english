@@ -35,7 +35,9 @@ export default function RootLayout({
                     </Container>
                 </header>
                 <main>
-                    <Container padding>{children}</Container>
+                    <Container padding className="pb-4">
+                        {children}
+                    </Container>
                 </main>
             </body>
         </html>
