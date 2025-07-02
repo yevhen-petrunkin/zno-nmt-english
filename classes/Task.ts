@@ -131,6 +131,14 @@ class Task {
     public getTaskTitle = (): string => {
         return `Task ${this._getActualTaskNumber()}`;
     };
+
+    /**
+     * Returns the task label (e.g. 'Завдання 4/1',
+     * where 4 means task number as counted in ZNO test and 1 as counted in NMT test)
+     */
+    public getTaskLabel = (): string => {
+        return `Завдання ${this._taskNumber}/${this._taskNumber - 3}`;
+    };
 }
 
 export default Task;
