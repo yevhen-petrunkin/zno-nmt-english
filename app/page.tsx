@@ -6,9 +6,9 @@ export default function Home() {
         testId: 'nmt_2023',
         testSession: 'extra',
         taskId: 'dfgwrtyqw98ys9gq',
-        taskNumber: Number('4'),
-        questionNumbers: [17, 18, 19, 20, 21],
-        answerLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+        taskNumber: Number('7'),
+        questionNumbers: [19, 17, 20, 18, 21],
+        answerLetters: ['C', 'H', 'D', 'B', 'E', 'F', 'A', 'G'],
     });
 
     console.log('getTestId', task.getTestId());
