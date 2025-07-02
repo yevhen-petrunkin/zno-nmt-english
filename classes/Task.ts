@@ -27,6 +27,22 @@ class Task {
         this._questionNumbers = questionNumbers;
         this._answerLetters = answerLetters;
     }
+
+    getTestId(): string {
+        return this._testId;
+    }
+
+    getTestSession(): TestSessionId {
+        return this._testSession;
+    }
+
+    getTaskId(): string {
+        return this._taskId;
+    }
+
+    getTaskNumber(): number {
+        return this._taskNumber;
+    }
 }
 
 export default Task;
