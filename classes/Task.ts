@@ -1,3 +1,6 @@
+import { TestTypeLabels } from '@/lib/constants/tests';
+import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
+import { TestTypeData } from '@/lib/types/test';
 import { TestSessionId } from '@/lib/types/testSession';
 
 import { TaskConfig } from './task.types';
@@ -28,21 +31,37 @@ class Task {
         this._answerLetters = answerLetters;
     }
 
-    getTestId(): string {
+    getTestId = (): string => {
         return this._testId;
-    }
+    };
 
-    getTestSession(): TestSessionId {
+    getTestSession = (): TestSessionId => {
         return this._testSession;
-    }
+    };
 
-    getTaskId(): string {
+    /**
+     * Returns the test type data (type and label), or null if the test ID is invalid.
+     */
+    getTestType = (): TestTypeData | null => {
+        const testData = parseTestIdString(this._testId);
+
+        if (!testData) {
+            return null;
+        }
+
+        return {
+            testType: testData.testType,
+            testTypeLabel: TestTypeLabels[testData.testType],
+        };
+    };
+
+    getTaskId = (): string => {
         return this._taskId;
-    }
+    };
 
-    getTaskNumber(): number {
+    getTaskNumber = (): number => {
         return this._taskNumber;
-    }
+    };
 }
 
 export default Task;

@@ -1,26 +1,21 @@
 import { INVALID_OPTION_LABEL } from '@/features/navigation-bar/lib/constants/navBarConstants';
-import { RouteBasesMain } from '@/lib/constants/routeBases';
+import { TestTypeLabels } from '@/lib/constants/tests';
 import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
 
-const optionMapObj = {
-    [RouteBasesMain.zno]: 'ЗНО',
-    [RouteBasesMain.nmt]: 'НМТ',
-};
-
 /**
- * Returns a label for a test, given its type.
+ * Returns a label for a test, given its id.
  * If the id is invalid, null is returned.
- * @param {string} testType the type of the test ('zno' or  'nmt')
+ * @param {string} testId The test ID string
  * @returns {string} the label based on the test type
  */
-const getTestTypeLabelByTestId = (testType: string): string => {
-    const optionData = parseTestIdString(testType);
+const getTestTypeLabelByTestId = (testId: string): string => {
+    const optionData = parseTestIdString(testId);
 
     if (!optionData) {
         return INVALID_OPTION_LABEL;
     }
 
-    const testTypeLabel: string = optionMapObj[optionData.testType];
+    const testTypeLabel = TestTypeLabels[optionData.testType];
 
     return testTypeLabel
         ? `${testTypeLabel} ${optionData.testYear}`
