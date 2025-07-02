@@ -1,6 +1,7 @@
 import { RouteBasesMain } from '@/lib/constants/routeBases';
 import { TestSessionLabels } from '@/lib/constants/testSessions';
 import { TestTypeLabels } from '@/lib/constants/tests';
+import getTaskInstructionByTaskNumber from '@/lib/helpers/task/getTaskInstructionByTaskNumber';
 import getTestTypeLabelByTestId from '@/lib/helpers/test/getTestTypeLabelByTestId';
 import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
 import { TestTypeData } from '@/lib/types/test';
@@ -138,6 +139,33 @@ class Task {
      */
     public getTaskLabel = (): string => {
         return `Завдання ${this._taskNumber}/${this._taskNumber - 3}`;
+    };
+
+    /**
+     * Returns the task questions range string (e.g. '1-5')
+     */
+    private _getTaskQuestionsRangeString = (): string => {
+        return `${Math.min(...this._questionNumbers)}-${Math.max(...this._questionNumbers)}`;
+    };
+
+    /**
+     * Returns the task answers range string (e.g. 'A-H')
+     */
+    private _getTaskAnswersRangeString = (): string => {
+        const sorted = this._answerLetters.toSorted();
+
+        return `${sorted.at(0)}-${sorted.at(-1)}`;
+    };
+
+    /**
+     * Returns the task instruction based on the task number.
+     */
+    public getTaskInstruction = (): string => {
+        return getTaskInstructionByTaskNumber({
+            taskNumber: this._taskNumber,
+            questionsRange: this._getTaskQuestionsRangeString(),
+            answersRange: this._getTaskAnswersRangeString(),
+        });
     };
 }
 
