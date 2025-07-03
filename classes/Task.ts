@@ -199,6 +199,20 @@ class Task {
 
         return TaskCompetenceLabels[competence] ?? null;
     };
+
+    /**
+     * Returns an array of question numbers (as counted in ZNO test).
+     */
+    public getQuestionNumbers = (): number[] => {
+        return this._questionNumbers.toSorted();
+    };
+
+    /**
+     * Returns the number of questions in the task.
+     */
+    public getQuestionsCount = (): number => {
+        return this._questionNumbers.length;
+    };
 }
 
 export default Task;
