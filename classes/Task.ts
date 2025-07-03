@@ -1,11 +1,13 @@
 import { RouteBasesMain } from '@/lib/constants/routeBases';
 import { TestSessionLabels } from '@/lib/constants/testSessions';
-import { TestTypeLabels } from '@/lib/constants/tests';
+import { TaskTestPartLabels, TestTypeLabels } from '@/lib/constants/tests';
 import getTaskInstructionByTaskNumber from '@/lib/helpers/task/getTaskInstructionByTaskNumber';
+import getTestPartByTaskNumber from '@/lib/helpers/task/getTestPartByTaskNumber';
 import getTestTypeLabelByTestId from '@/lib/helpers/test/getTestTypeLabelByTestId';
 import parseTestIdString from '@/lib/helpers/test/parseTestIdString';
 import { TestTypeData } from '@/lib/types/test';
 import { TestSession, TestSessionId } from '@/lib/types/testSession';
+import { DataByLanguage } from '@/lib/types/types';
 
 import { TaskConfig } from './task.types';
 
@@ -91,6 +93,20 @@ class Task {
      */
     public getTestLabel = (): string | null => {
         return getTestTypeLabelByTestId(this._testId);
+    };
+
+    /**
+     * Returns the test part labels - in English (e.g. eng: 'Reading') and in Ukrainian (e.g. ukr: 'Читання').
+     * or null if the task number is not recognized.
+     */
+    public getTestPart = (): DataByLanguage | null => {
+        const testPart = getTestPartByTaskNumber(this._taskNumber);
+
+        if (!testPart) {
+            return null;
+        }
+
+        return TaskTestPartLabels[testPart] ?? null;
     };
 
     // -------------- TASK -----------------
