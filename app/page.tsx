@@ -22,5 +22,6 @@ export default function Home() {
     console.log('getTaskLabel', task.getTaskLabel());
     console.log('getTaskInstruction', task.getTaskInstruction());
     console.log('getTestPart', task.getTestPart());
+    console.log('getTaskCompetence', task.getTaskCompetence());
     return <SectionHero />;
 }

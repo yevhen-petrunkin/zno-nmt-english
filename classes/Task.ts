@@ -1,6 +1,8 @@
 import { RouteBasesMain } from '@/lib/constants/routeBases';
+import { TaskCompetenceLabels } from '@/lib/constants/tasks';
 import { TestSessionLabels } from '@/lib/constants/testSessions';
 import { TaskTestPartLabels, TestTypeLabels } from '@/lib/constants/tests';
+import getTaskCompetenceByTaskNumber from '@/lib/helpers/task/getTaskCompetenceByTaskNumber';
 import getTaskInstructionByTaskNumber from '@/lib/helpers/task/getTaskInstructionByTaskNumber';
 import getTestPartByTaskNumber from '@/lib/helpers/task/getTestPartByTaskNumber';
 import getTestTypeLabelByTestId from '@/lib/helpers/test/getTestTypeLabelByTestId';
@@ -182,6 +184,20 @@ class Task {
             questionsRange: this._getTaskQuestionsRangeString(),
             answersRange: this._getTaskAnswersRangeString(),
         });
+    };
+
+    /**
+     * Returns the task competence labels - in English (e.g. eng: 'Listening') and in Ukrainian (e.g. ukr: 'Аудіювання').
+     * or null if the task number is not recognized.
+     */
+    public getTaskCompetence = (): DataByLanguage | null => {
+        const competence = getTaskCompetenceByTaskNumber(this._taskNumber);
+
+        if (!competence) {
+            return null;
+        }
+
+        return TaskCompetenceLabels[competence] ?? null;
     };
 }
 
