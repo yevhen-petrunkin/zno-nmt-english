@@ -6,17 +6,23 @@ export const TestSessionIds = {
     extra: 'extra',
 } as const;
 
+export const TestSessionLabels = {
+    [TestSessionIds.demo]: 'Пробна сесія',
+    [TestSessionIds.main]: 'Основна сесія',
+    [TestSessionIds.extra]: 'Додаткова сесія',
+} as const;
+
 export const TestSessions: TestSessionData = {
     [TestSessionIds.demo]: {
         id: TestSessionIds.demo,
-        label: 'Пробна сесія',
+        label: TestSessionLabels.demo,
     },
     [TestSessionIds.main]: {
         id: TestSessionIds.main,
-        label: 'Основна сесія',
+        label: TestSessionLabels.main,
     },
     [TestSessionIds.extra]: {
         id: TestSessionIds.extra,
-        label: 'Додаткова сесія',
+        label: TestSessionLabels.extra,
     },
 } as const;
